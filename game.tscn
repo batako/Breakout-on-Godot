@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://by7uvctnl67ih"]
+[gd_scene load_steps=15 format=3 uid="uid://by7uvctnl67ih"]
 
+[ext_resource type="PackedScene" uid="uid://tprqehaohq8q" path="res://block.tscn" id="1_atuoi"]
 [ext_resource type="PackedScene" uid="uid://cve0r4tmchx8v" path="res://player.tscn" id="1_oonqb"]
 [ext_resource type="PackedScene" uid="uid://d4vplaidtug1" path="res://ball.tscn" id="2_7msgm"]
 
@@ -109,6 +110,113 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 4.7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Bottom"]
 shape = SubResource("BoxShape3D_1vo0l")
+
+[node name="Enemy" type="Node" parent="."]
+
+[node name="Block" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.25, -3.75)
+
+[node name="Block5" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0.25, -3.75)
+
+[node name="Block6" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.25, -3.75)
+
+[node name="Block7" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75, 0.25, -3.75)
+
+[node name="Block2" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 0.25, -3.75)
+
+[node name="Block3" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.25, -3.75)
+
+[node name="Block4" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.75, 0.25, -3.75)
+
+[node name="Block8" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.75, 0.25, -3)
+
+[node name="Block12" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.25, -3)
+
+[node name="Block13" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 0.25, -3)
+
+[node name="Block14" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.25, -3)
+
+[node name="Block15" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0.25, -3)
+
+[node name="Block16" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.25, -3)
+
+[node name="Block17" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75, 0.25, -3)
+
+[node name="Block9" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.75, 0.25, -2.25)
+
+[node name="Block18" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.25, -2.25)
+
+[node name="Block19" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 0.25, -2.25)
+
+[node name="Block20" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.25, -2.25)
+
+[node name="Block21" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0.25, -2.25)
+
+[node name="Block22" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.25, -2.25)
+
+[node name="Block23" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75, 0.25, -2.25)
+
+[node name="Block10" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.75, 0.25, -1.5)
+
+[node name="Block24" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.25, -1.5)
+
+[node name="Block25" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 0.25, -1.5)
+
+[node name="Block26" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.25, -1.5)
+
+[node name="Block27" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0.25, -1.5)
+
+[node name="Block28" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.25, -1.5)
+
+[node name="Block29" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75, 0.25, -1.5)
+
+[node name="Block11" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.75, 0.25, -0.75)
+
+[node name="Block30" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.25, -0.75)
+
+[node name="Block31" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 0.25, -0.75)
+
+[node name="Block32" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.25, -0.75)
+
+[node name="Block33" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0.25, -0.75)
+
+[node name="Block34" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.25, -0.75)
+
+[node name="Block35" parent="Enemy" instance=ExtResource("1_atuoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75, 0.25, -0.75)
 
 [node name="Player" parent="." instance=ExtResource("1_oonqb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.25, 4)
