@@ -11,6 +11,8 @@ var launch_velocity = Vector3(0, 0, -10)
 var constant_speed = 10.0
 var bottom_wall: Area3D
 
+signal retry
+
 func _ready():
 	player = $"../Player"
 	bottom_wall = $"../Stage/Bottom"
@@ -36,5 +38,7 @@ func launch_ball():
 
 
 func _on_bottom_body_entered(body: Node3D) -> void:
-	is_launched = false
-	linear_velocity = Vector3.ZERO
+	if is_launched:
+		is_launched = false
+		linear_velocity = Vector3.ZERO
+		emit_signal("retry")

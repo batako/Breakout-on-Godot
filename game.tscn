@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://by7uvctnl67ih"]
+[gd_scene load_steps=16 format=3 uid="uid://by7uvctnl67ih"]
 
 [ext_resource type="PackedScene" uid="uid://tprqehaohq8q" path="res://block.tscn" id="1_atuoi"]
 [ext_resource type="PackedScene" uid="uid://cve0r4tmchx8v" path="res://player.tscn" id="1_oonqb"]
+[ext_resource type="Script" path="res://game.gd" id="1_rke1m"]
 [ext_resource type="PackedScene" uid="uid://d4vplaidtug1" path="res://ball.tscn" id="2_7msgm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_te8xw"]
@@ -41,6 +42,7 @@ data = PackedVector3Array(-8.5, 0.5, 0.25, 8.5, 0.5, 0.25, -8.5, -0.5, 0.25, 8.5
 size = Vector3(17, 1, 0.5)
 
 [node name="Game" type="Node3D"]
+script = ExtResource("1_rke1m")
 
 [node name="Light" type="Node" parent="."]
 
@@ -224,4 +226,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.25, 4)
 [node name="Ball" parent="." instance=ExtResource("2_7msgm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 3)
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TryLabel" type="Label" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "RETRY: 0
+"
+
 [connection signal="body_entered" from="Stage/Bottom" to="Ball" method="_on_bottom_body_entered"]
+[connection signal="retry" from="Ball" to="." method="_on_ball_retry"]
