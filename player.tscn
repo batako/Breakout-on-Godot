@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cve0r4tmchx8v"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_7o8p1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tgnuh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yg7wu"]
+albedo_color = Color(0, 0.764706, 0.980392, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4ojsx"]
+material = SubResource("StandardMaterial3D_yg7wu")
+size = Vector3(2, 0.5, 0.25)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_j7d4d"]
+points = PackedVector3Array(-1.01587, -0.265873, -0.140845, 1.01587, 0.273809, 0.144813, 1.01587, 0.273809, -0.140845, -1.01587, 0.273809, 0.144813, 1.01587, -0.265873, 0.144813, 1.01587, -0.265873, -0.140845, -1.01587, 0.273809, -0.140845, -1.01587, -0.265873, 0.144813)
+
+[node name="Player" type="RigidBody3D"]
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_tgnuh")
+lock_rotation = true
+script = ExtResource("1_7o8p1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_4ojsx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_j7d4d")
+
+[node name="TwistPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
+
+[node name="PitchPivot" type="Node3D" parent="TwistPivot"]
+transform = Transform3D(1, -4.09353e-16, 3.43488e-16, 3.43488e-16, 0.984808, 0.173648, -4.09353e-16, -0.173648, 0.984808, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 3)
