@@ -4,20 +4,24 @@ extends RigidBody3D
 @export var speed = 5.0
 
 var is_launched = false
-var player_ref : Node # プレイヤーノードへの参照を設定する
-var launch_velocity = Vector3(0, 0, -10) # 発射時の初期速度
-var constant_speed = 10.0 # 等速直線運動を維持するための速度
-
+var player : RigidBody3D
+# 発射時の初期速度
+var launch_velocity = Vector3(0, 0, -10)
+# 等速直線運動を維持するための速度
+var constant_speed = 10.0
+var bottom_wall: Area3D
 
 func _ready():
-	player_ref = $"../Player"
+	player = $"../Player"
+	bottom_wall = $"../Stage/Bottom"
 
 
 func _physics_process(_delta):
 	if !is_launched:
-		# プレイヤーのX位置と同期
-		var player_position = player_ref.global_transform.origin
+		# プレイヤーのXZ位置と同期
+		var player_position = player.global_transform.origin
 		global_transform.origin.x = player_position.x
+		global_transform.origin.z = player_position.z - 0.5
 		# スペースキーで発射
 		if Input.is_action_just_pressed("ui_accept"):
 			launch_ball()
@@ -29,3 +33,8 @@ func _physics_process(_delta):
 func launch_ball():
 	is_launched = true
 	linear_velocity = launch_velocity.normalized() * constant_speed
+
+
+func _on_bottom_body_entered(body: Node3D) -> void:
+	is_launched = false
+	linear_velocity = Vector3.ZERO

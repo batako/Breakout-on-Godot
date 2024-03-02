@@ -36,7 +36,7 @@ func handle_player_movement(delta: float) -> void:
 	var input := Vector3.ZERO
 	input.x = Input.get_axis("move_left", "move_right")
 	#input.y = Input.get_axis("move_back", "move_forward")
-	apply_central_force(twist_pivot.basis * input * 1200.0 * delta)
+	apply_central_force(twist_pivot.basis * input * 2000.0 * delta)
 
 
 # カメラの設定
